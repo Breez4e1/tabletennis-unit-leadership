@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teaching Videos – Table Tennis Unit</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .video-container {
+      margin-top: 2rem;
+    }
+    .video-item {
+      margin-bottom: 2rem;
+    }
+    .video-item iframe, .video-item video {
+      width: 100%;
+      max-width: 720px;
+      height: 405px;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,12 +37,35 @@
     <section class="video-topics">
       <h2>Skills Covered</h2>
       <ul>
-        <li>Grip</li>
-        <li>Forehand</li>
-        <li>Backhand</li>
-        <li>Serve</li>
-        <li>Backspin / Chop</li>
+        <li><a href="#grip">Grip</a></li>
+        <li><a href="#forehand">Forehand</a></li>
+        <li><a href="#backhand">Backhand</a></li>
+        <li><a href="#serve">Serve</a></li>
+        <li><a href="#backspin">Backspin / Chop</a></li>
       </ul>
+    </section>
+
+    <section class="video-container">
+      <div id="grip" class="video-item">
+        <h3>Grip</h3>
+        <video controls src="assets/videos/grip.mp4"></video>
+      </div>
+      <div id="forehand" class="video-item">
+        <h3>Forehand</h3>
+        <iframe src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID1" allowfullscreen></iframe>
+      </div>
+      <div id="backhand" class="video-item">
+        <h3>Backhand</h3>
+        <iframe src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID2" allowfullscreen></iframe>
+      </div>
+      <div id="serve" class="video-item">
+        <h3>Serve</h3>
+        <video controls src="assets/videos/serve.mp4"></video>
+      </div>
+      <div id="backspin" class="video-item">
+        <h3>Backspin / Chop</h3>
+        <iframe src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID3" allowfullscreen></iframe>
+      </div>
     </section>
   </main>
 
