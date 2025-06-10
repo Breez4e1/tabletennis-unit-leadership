@@ -103,4 +103,27 @@ footer {
   font-size: 0.9rem;
 }
 
+#news-list {
+  list-style: none;
+  padding: 0;
+}
+#news-list li {
+  margin-bottom: 1rem;
+}
+#news-list a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+#news-list a:hover {
+  color: var(--secondary-color);
+}
+#news-list .date {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+
 
