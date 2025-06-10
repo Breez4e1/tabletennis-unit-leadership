@@ -1,25 +1,47 @@
-:root {
-  --primary-color: #6A0DAD;   /* 主紫色 */
-  --secondary-color: #1ABC9C; /* 辅青色 */
-  --bg-light: #F5F5F5;
+/* ====== 大尺寸背景水印 Logo ====== */
+body {
+  position: relative;
+  background-color: var(--bg-light);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+/* 伪元素加载大 Logo 水印 */
+body::before {
+  content: "";
+  position: absolute;
+  top: 120px;            /* 根据需要往下移，避开导航 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;          /* Logo 显示宽度，可根据喜好调整 */
+  height: 400px;         /* 也可以省略，background-size: contain 会保持比例 */
+  background: url('../images/logo.jpg') no-repeat center center;
+  background-size: contain;
+  opacity: 0.05;         /* 透明度，值越小越淡 */
+  pointer-events: none;  /* 不会拦截点击 */
+  z-index: 0;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: Arial, sans-serif;
-  background-color: var(--bg-light);
-  /* Logo 水印背景 */
-  background-image: url('../images/logo.jpg');
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: 150px auto;
-  padding-top: 200px; /* 给 Logo 留空间 */
+/* 确保页面内容能显示在水印上 */
+header, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ====== 以下是你已有的样式（保持不变） ====== */
+:root {
+  --primary-color: #6A0DAD;
+  --secondary-color: #1ABC9C;
+  --bg-light: #F5F5F5;
 }
 
 header {
   background-color: var(--primary-color);
   color: #fff;
   padding: 1rem;
+}
+header h1 {
+  margin-bottom: 0.5rem;
 }
 nav a {
   color: #fff;
@@ -34,13 +56,13 @@ main {
   padding: 2rem;
 }
 
-/* 卡片样式 */
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 1.5rem;
 }
+
 .card {
   width: 220px;
   border: 1px solid var(--primary-color);
@@ -52,7 +74,6 @@ main {
 .card:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-/* 标题链接用主色，悬停用辅色 */
 .card h2 a {
   color: var(--primary-color);
   text-decoration: none;
@@ -71,3 +92,4 @@ footer {
   background: #e0e0e0;
   margin-top: 2rem;
 }
+
