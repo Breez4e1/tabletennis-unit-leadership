@@ -6,19 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch(apiUrl)
     .then(res => res.json())
     .then(data => {
-      list.innerHTML = ''; // 清空 loading 信息
+      list.innerHTML = ''; // 清除 “Loading...” 
       data.items.slice(0, 6).forEach(item => {
+        // 尝试取 thumbnail 或 enclosure
+        const imgUrl = item.thumbnail || (item.enclosure && item.enclosure.link) || '';
         const li = document.createElement('li');
-        // 某些 RSS 条目会包含 media:thumbnail 或 enclosure
-        const imgUrl =
-          (item.thumbnail && item.thumbnail) ||
-          (item.enclosure && item.enclosure.link) ||
-          '';
         li.innerHTML = `
-          ${imgUrl ? `<img src="${imgUrl}" alt="${item.title}" />` : ''}
+          ${imgUrl ? `<img src="${imgUrl}" alt="${item.title}">` : ''}
           <h3>${item.title}</h3>
           <p class="date">${new Date(item.pubDate).toLocaleDateString()}</p>
-          <p class="desc">${item.description.replace(/<\/?[^>]+(>|$)/g, '').slice(0, 200)}…</p>
+          <p class="desc">${(item.content || item.description).replace(/<\/?[^>]+(>|$)/g, '').slice(0, 250)}…</p>
           <a class="read-more" href="${item.link}" target="_blank">Read More</a>
         `;
         list.appendChild(li);
@@ -26,6 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(err => {
       console.error(err);
-      list.innerHTML = '<li>Failed to load world news. Please try again later.</li>';
+      list.innerHTML = '<li>Failed to load world news.</li>';
     });
 });
