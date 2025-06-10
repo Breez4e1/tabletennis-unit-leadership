@@ -1,143 +1,86 @@
-/* —— 大尺寸背景水印 Logo —— */
+/* Global layout & background */
 body {
-  position: relative;
+  background: linear-gradient(to bottom right, #f3f4f6, #dceefb);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #F5F5F5;
-  font-family: Arial, sans-serif;
+  position: relative;
 }
 body::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60vw;
-  height: 60vw;
-  max-width: 500px;
-  max-height: 500px;
+  width: 500px;
+  height: 500px;
   background: url('../images/logo.jpg') no-repeat center center;
   background-size: contain;
   opacity: 0.05;
-  pointer-events: none;
   z-index: 0;
+  pointer-events: none;
 }
-
 header, main, footer {
   position: relative;
   z-index: 1;
 }
 
-:root {
-  --primary-color: #6A0DAD;
-  --secondary-color: #1ABC9C;
-  --bg-light: #F5F5F5;
-}
-
+/* Header */
 header {
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 1rem;
+  background-color: #6A0DAD;
+  color: white;
+  padding: 2rem 1rem;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-header h1 {
-  margin: 0 0 0.5rem;
-  font-size: 1.8rem;
+nav {
+  margin-top: 1rem;
 }
 nav a {
-  color: #fff;
+  color: white;
   margin: 0 1rem;
   text-decoration: none;
-  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 nav a:hover {
-  color: var(--secondary-color);
+  color: #1ABC9C;
 }
 
-main {
-  padding: 2rem;
-}
+/* Main Card Layout */
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 1rem;
 }
 .card {
-  width: 220px;
-  border: 1px solid var(--primary-color);
-  border-radius: 8px;
-  padding: 1rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
   text-align: center;
-  background: #fff;
-  transition: box-shadow 0.3s;
+  width: 250px;
+  transition: transform 0.3s;
 }
 .card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-.card h2 {
-  margin-bottom: 0.5rem;
+  transform: translateY(-5px);
 }
 .card h2 a {
-  color: var(--primary-color);
+  color: #6A0DAD;
   text-decoration: none;
-}
-.card h2 a:hover {
-  color: var(--secondary-color);
 }
 .card p {
   color: #555;
-  line-height: 1.4;
+  font-size: 0.95rem;
 }
 
+/* Footer */
 footer {
-  text-align: center;
+  background: #ececec;
   padding: 1rem;
-  background: #e0e0e0;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-}
-
-header img {
-  display: none;
-}
-.team-layout {
-  padding: 2rem;
-}
-
-.team-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.player-card {
-  width: 200px;
   text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 1rem;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.player-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  margin-bottom: 0.5rem;
-}
-
-.player-card h3 {
-  margin: 0.5rem 0 0.25rem;
-  color: var(--primary-color);
-}
-
-.player-card p {
   font-size: 0.9rem;
   color: #333;
-  line-height: 1.4;
 }
-
-/* —
