@@ -9,7 +9,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: var(--bg-light);
   /* Logo 水印背景 */
-  background-image: url('../images/logo.png');
+  background-image: url('../images/logo.jpg');
   background-position: center top;
   background-repeat: no-repeat;
   background-size: 150px auto;
