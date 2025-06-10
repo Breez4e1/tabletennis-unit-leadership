@@ -101,5 +101,43 @@ footer {
 header img {
   display: none;
 }
+.team-layout {
+  padding: 2rem;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.player-card {
+  width: 200px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.player-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.player-card h3 {
+  margin: 0.5rem 0 0.25rem;
+  color: var(--primary-color);
+}
+
+.player-card p {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.4;
+}
 
 /* —
