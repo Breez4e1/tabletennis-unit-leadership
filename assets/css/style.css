@@ -90,9 +90,6 @@ main {
   color: #555;
   line-height: 1.4;
 }
-header img{
-  display:none
-}
 
 /* —— 页脚 —— */
 footer {
@@ -102,6 +99,8 @@ footer {
   margin-top: 2rem;
   font-size: 0.9rem;
 }
-
+header img{
+  display:none
+}
 
 
