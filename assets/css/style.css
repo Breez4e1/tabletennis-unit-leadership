@@ -1,12 +1,40 @@
-/* Reset and base styles */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: Arial, sans-serif; line-height: 1.6; }
-header { background: #0066cc; color: #fff; padding: 1rem; }
-header h1 { margin-bottom: 0.5rem; }
-nav a { color: #fff; margin-right: 1rem; text-decoration: none; }
-main { padding: 2rem; }
+:root {
+  --primary-color: #6A0DAD;   /* 主紫色 */
+  --secondary-color: #1ABC9C; /* 辅青色 */
+  --bg-light: #F5F5F5;
+}
 
-/* Card layout for the four sections */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-light);
+  /* Logo 水印背景 */
+  background-image: url('../images/logo.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 150px auto;
+  padding-top: 200px; /* 给 Logo 留空间 */
+}
+
+header {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1rem;
+}
+nav a {
+  color: #fff;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+nav a:hover {
+  color: var(--secondary-color);
+}
+
+main {
+  padding: 2rem;
+}
+
+/* 卡片样式 */
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -15,7 +43,7 @@ main { padding: 2rem; }
 }
 .card {
   width: 220px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--primary-color);
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
@@ -24,19 +52,22 @@ main { padding: 2rem; }
 .card:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+/* 标题链接用主色，悬停用辅色 */
 .card h2 a {
-  color: #0066cc;
+  color: var(--primary-color);
   text-decoration: none;
+}
+.card h2 a:hover {
+  color: var(--secondary-color);
 }
 .card p {
   color: #555;
   margin-top: 0.5rem;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
-  background: #f0f0f0;
+  background: #e0e0e0;
   margin-top: 2rem;
 }
