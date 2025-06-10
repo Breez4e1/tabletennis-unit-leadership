@@ -11,8 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
       items.forEach(item => {
         const li = document.createElement('li');
         li.innerHTML = `
-          <a href="${item.link}" target="_blank">${item.title}</a><br />
-          <span class="date">${new Date(item.pubDate).toLocaleDateString()}</span>
+          <h3>${item.title}</h3>
+          <p><strong>Date:</strong> ${new Date(item.pubDate).toLocaleDateString()}</p>
+          <p>${item.description.slice(0, 200)}...</p>
+          <a href="${item.link}" target="_blank">Read More</a>
+          <hr />
         `;
         list.appendChild(li);
       });
