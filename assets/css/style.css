@@ -84,3 +84,7 @@ footer {
   font-size: 0.9rem;
   color: #333;
 }
+:root {
+  --primary-color: #6a1b9a;  /* 深紫色 */
+  --secondary-color: #ab47bc;  /* 浅一点的紫色，用于 hover 效果等 */
+}
