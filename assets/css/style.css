@@ -103,6 +103,7 @@ footer {
 .player-card {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: #f9f9f9;
   padding: 1rem;
   border-radius: 12px;
@@ -111,11 +112,8 @@ footer {
 }
 
 .player-card img {
-  width: 15vw;           /* 图片宽度为视口宽度的15% */
-  max-width: 80px;       /* 最大宽度不超过80px */
-  min-width: 50px;       /* 最小宽度不小于50px */
-  height: auto;
-  aspect-ratio: 1/1;     /* 保持正方形 */
+  width: 4.5rem;
+  height: 4.5rem;
   object-fit: cover;
   border-radius: 50%;
   margin-left: 1rem;
@@ -123,5 +121,18 @@ footer {
 
 .player-info {
   flex: 1;
+}
+
+/* ✅ 自适应优化：在小屏幕上缩小头像 */
+@media (max-width: 600px) {
+  .player-card img {
+    width: 3rem;
+    height: 3rem;
+    margin-left: 0.75rem;
+  }
+
+  .player-card {
+    padding: 0.75rem;
+  }
 }
 
