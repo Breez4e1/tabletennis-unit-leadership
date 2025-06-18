@@ -103,23 +103,25 @@ footer {
 .player-card {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background: #f9f9f9;
   padding: 1rem;
   border-radius: 12px;
   margin-bottom: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.player-card img {
+  width: 15vw;           /* 图片宽度为视口宽度的15% */
+  max-width: 80px;       /* 最大宽度不超过80px */
+  min-width: 50px;       /* 最小宽度不小于50px */
+  height: auto;
+  aspect-ratio: 1/1;     /* 保持正方形 */
+  object-fit: cover;
+  border-radius: 50%;
+  margin-left: 1rem;
 }
 
 .player-info {
   flex: 1;
-}
-
-.player-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-left: 1rem;
 }
 
