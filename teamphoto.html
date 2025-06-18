@@ -7,59 +7,61 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
     body {
+      margin: 0;
+      padding: 2rem;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f5f5f5;
-      padding: 2rem;
       text-align: center;
     }
 
     h1 {
       color: #6a1b9a;
+      margin-bottom: 2rem;
     }
 
-    .photo-gallery {
+    .photo-column {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-      margin-top: 2rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
     }
 
-    .photo-gallery img {
-      width: 300px;
+    .photo-column img {
+      width: 90%;
+      max-width: 700px;
       height: auto;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease;
     }
 
-    .photo-gallery img:hover {
-      transform: scale(1.03);
+    .photo-column img:hover {
+      transform: scale(1.02);
     }
 
-    a.back-link {
-      display: inline-block;
-      margin-top: 2rem;
+    .back-link {
+      display: block;
+      margin-top: 3rem;
+      font-weight: bold;
       text-decoration: none;
       color: #6a1b9a;
-      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h1>More Team Photos</h1>
+  <h1>Team Photo Gallery</h1>
 
-  <div class="photo-gallery">
-    <img src="assets/images/team_photo1.jpg" alt="Team Photo 1" />
-    <img src="assets/images/team_photo2.jpg" alt="Team Photo 2" />
-    <img src="assets/images/team_photo3.jpg" alt="Team Photo 3" />
-    <img src="assets/images/team_photo4.jpg" alt="Team Photo 4" />
-    <img src="assets/images/team_photo5.jpg" alt="Team Photo 5" />
-    <img src="assets/images/team_photo6.jpg" alt="Team Photo 6" />
-    <img src="assets/images/team_photo7.jpg" alt="Team Photo 7" />
-    <img src="assets/images/team_photo8.jpg" alt="Team Photo 8" />
-    <img src="assets/images/team_photo9.jpg" alt="Team Photo 9" />
-    <img src="assets/images/team_photo10.jpg" alt="Team Photo 10" />
+  <div class="photo-column">
+    <img src="assets/images/team_photo1.jpg" />
+    <img src="assets/images/team_photo2.jpg" />
+    <img src="assets/images/team_photo3.jpg" />
+    <img src="assets/images/team_photo4.jpg" />
+    <img src="assets/images/team_photo5.jpg" />
+    <img src="assets/images/team_photo6.jpg" />
+    <img src="assets/images/team_photo7.jpg" />
+    <img src="assets/images/team_photo8.jpg" />
+    <img src="assets/images/team_photo9.jpg" />
+    <img src="assets/images/team_photo10.jpg" />
   </div>
 
   <a href="team.html" class="back-link">&larr; Back to Team Page</a>
